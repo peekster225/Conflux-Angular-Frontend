@@ -11,18 +11,16 @@ import { HomeComponent } from './home.component'
     imports: [
         CommonModule,
         RouterModule.forChild([
-
             {
 
                 path: '',
-                component: HomeComponent
+                component: HomeComponent,
+                pathMatch: 'full'
 
             }
-
         ])
 
-    ]
-    
+    ],
 })
 export class HomeModule {
 }
