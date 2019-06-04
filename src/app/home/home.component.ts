@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from './login.service'
+import { RegisterService } from './register.service';
 
 
 @Component({
@@ -8,14 +9,18 @@ import { LoginService } from './login.service'
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  public data: string;
-  constructor(private LoginService: LoginService) {
-  }
+  public loginData: string;
+  public registerData: string;
+  constructor(private LoginService: LoginService) {}
+
+
 
   public login(): void {
-    this.data = this.LoginService.login();
+
   }
 
+  public register(): void {
+  }
   ngOnInit() {
   }
 
