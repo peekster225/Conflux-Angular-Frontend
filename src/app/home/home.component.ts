@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from './login.service'
 
 
 @Component({
@@ -7,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  constructor() { 
+  public data: string;
+  constructor(private LoginService: LoginService) {
+  }
+
+  public login(): void {
+    this.data = this.LoginService.login();
   }
 
   ngOnInit() {

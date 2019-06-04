@@ -1,6 +1,7 @@
 import { NgModule }      from '@angular/core';
 import { RouterModule }  from '@angular/router';
-import { HomeComponent } from './home.component'
+import { HomeComponent } from './home.component';
+import { LoginService } from './login.service';
 @NgModule({
 
     declarations: [
@@ -19,6 +20,10 @@ import { HomeComponent } from './home.component'
         ])
 
     ],
+
+    providers: [
+        LoginService
+    ]
 })
 export class HomeModule {
 }
