@@ -2,6 +2,8 @@ import { NgModule }      from '@angular/core';
 import { RouterModule }  from '@angular/router';
 import { HomeComponent } from './home.component';
 import { LoginService } from './login.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
 
     declarations: [
@@ -17,7 +19,9 @@ import { LoginService } from './login.service';
                 pathMatch: 'full'
 
             }
-        ])
+        ]),
+        FormsModule,
+        ReactiveFormsModule
 
     ],
 

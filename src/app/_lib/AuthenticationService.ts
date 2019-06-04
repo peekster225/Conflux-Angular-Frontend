@@ -45,7 +45,7 @@ export class AuthenticationService {
 
         let subject: Subject<RequestResult<any> | boolean> = new Subject();
 
-        this.apiClient.post<any>(`/users/login`, {
+        this.apiClient.post<any>(`/auth/login`, {
 
             username,
             password

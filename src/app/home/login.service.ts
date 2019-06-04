@@ -6,7 +6,8 @@ export class LoginService {
 
     public token: string;
     public login(username: string, password: string): void {
-        
-        this.token = this.AuthenticationService.login(username, password);
+        this.AuthenticationService.login(username, password).subscribe(result => {
+            console.log(result);
+        });
     }
 }
