@@ -39,7 +39,7 @@ export class AuthenticationService {
 
     }
 
-    public login(email: string, password: string): any {
+    public login(username: string, password: string): any {
 
         localStorage.removeItem('token');
 
@@ -47,7 +47,7 @@ export class AuthenticationService {
 
         this.apiClient.post<any>(`/users/login`, {
 
-            email,
+            username,
             password
 
         }).subscribe((result: any) => {
