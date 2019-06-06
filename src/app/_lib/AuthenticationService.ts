@@ -65,6 +65,34 @@ export class AuthenticationService {
         return subject;
 
     }
+    public register(username: string, password: string): any {
+
+        localStorage.removeItem('token');
+
+        let subject: Subject<RequestResult<any> | boolean> = new Subject();
+
+        this.apiClient.post<any>(`/auth/register`, {
+
+            username,
+            password
+
+        }).subscribe((result: any) => {
+
+            if (!RequestResult.isError(result)) {
+
+                localStorage.setItem('username', result.message);
+
+            }
+
+            subject.next(result);
+
+        });
+
+        return subject;
+
+    }
+
+
 
     public logout() {
 

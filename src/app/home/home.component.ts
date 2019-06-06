@@ -11,11 +11,16 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private LoginService: LoginService) {}
+  constructor(private LoginService: LoginService,
+              private RegisterService: RegisterService) {}
 
   loginForm= new FormGroup({
     username: new FormControl(''),
     password: new FormControl(''),
+  });
+  registerForm= new FormGroup({
+    Rusername: new FormControl(''),
+    Rpassword: new FormControl(''),
   });
 
   public login(): void {
@@ -23,6 +28,9 @@ export class HomeComponent implements OnInit {
   }
 
   public register(): void {
+    this.RegisterService.register(this.registerForm["value"]["Rusername"], this.registerForm["value"]["Rpassword"]);
+
+    
   }
   ngOnInit() {
   }

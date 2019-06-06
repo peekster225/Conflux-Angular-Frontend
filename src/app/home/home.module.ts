@@ -3,6 +3,7 @@ import { RouterModule }  from '@angular/router';
 import { HomeComponent } from './home.component';
 import { LoginService } from './login.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RegisterService } from './register.service';
 
 @NgModule({
 
@@ -26,7 +27,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ],
 
     providers: [
-        LoginService
+        LoginService,
+        RegisterService
     ]
 })
 export class HomeModule {
